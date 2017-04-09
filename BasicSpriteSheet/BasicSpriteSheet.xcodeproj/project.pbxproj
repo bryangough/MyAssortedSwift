@@ -15,6 +15,8 @@
 		5ABAC2F21E9AC69400BDDCB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ABAC2F01E9AC69400BDDCB2 /* LaunchScreen.storyboard */; };
 		5AE383FA1E9ACE3100C69033 /* BasicPeople.atlasc in Resources */ = {isa = PBXBuildFile; fileRef = 5AE383F81E9ACE3100C69033 /* BasicPeople.atlasc */; };
 		5AE383FB1E9ACE3100C69033 /* BasicPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE383F91E9ACE3100C69033 /* BasicPeople.swift */; };
+		5AE384211E9AD7C400C69033 /* BasicMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE384201E9AD7C400C69033 /* BasicMover.swift */; };
+		5AE384231E9AD8E300C69033 /* MoverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE384221E9AD8E300C69033 /* MoverProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		5ABAC2F31E9AC69400BDDCB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE383F81E9ACE3100C69033 /* BasicPeople.atlasc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BasicPeople.atlasc; sourceTree = "<group>"; };
 		5AE383F91E9ACE3100C69033 /* BasicPeople.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPeople.swift; sourceTree = "<group>"; };
+		5AE384201E9AD7C400C69033 /* BasicMover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMover.swift; sourceTree = "<group>"; };
+		5AE384221E9AD8E300C69033 /* MoverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoverProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,9 @@
 				5AE383F91E9ACE3100C69033 /* BasicPeople.swift */,
 				5ABAC2E11E9AC69400BDDCB2 /* AppDelegate.swift */,
 				5ABAC2E71E9AC69400BDDCB2 /* GameScene.swift */,
+				5AE384221E9AD8E300C69033 /* MoverProtocol.swift */,
 				5ABAC2E91E9AC69400BDDCB2 /* GameViewController.swift */,
+				5AE384201E9AD7C400C69033 /* BasicMover.swift */,
 				5ABAC2EB1E9AC69400BDDCB2 /* Main.storyboard */,
 				5ABAC2EE1E9AC69400BDDCB2 /* Assets.xcassets */,
 				5ABAC2F01E9AC69400BDDCB2 /* LaunchScreen.storyboard */,
@@ -147,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE384211E9AD7C400C69033 /* BasicMover.swift in Sources */,
+				5AE384231E9AD8E300C69033 /* MoverProtocol.swift in Sources */,
 				5ABAC2E81E9AC69400BDDCB2 /* GameScene.swift in Sources */,
 				5ABAC2EA1E9AC69400BDDCB2 /* GameViewController.swift in Sources */,
 				5ABAC2E21E9AC69400BDDCB2 /* AppDelegate.swift in Sources */,

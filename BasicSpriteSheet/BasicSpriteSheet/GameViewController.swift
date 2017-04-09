@@ -12,9 +12,28 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    var scene:GameScene!
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+    
+    @IBAction func doFall(_ sender: Any) {
+        scene.doFall()
+    }
+    @IBAction func doWalk(_ sender: Any) {
+        scene.doWalk()
+    }
+    @IBAction func doIdle(_ sender: Any) {
+        scene.doIdle()
+    }
+    @IBAction func doUse(_ sender: Any) {
+        scene.doUse()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scene = GameScene(size: view.bounds.size)
+        scene = GameScene(size: view.bounds.size)
         let skView = view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true

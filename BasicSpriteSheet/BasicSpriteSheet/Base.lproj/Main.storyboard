@@ -20,6 +20,34 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycK-LQ-UoE">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Idle" id="Qtz-Sq-cnk">
+                                        <connections>
+                                            <action selector="doIdle:" destination="BV1-FR-VrT" id="WAl-gX-9UM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Walk" id="0Vt-AD-emS">
+                                        <connections>
+                                            <action selector="doWalk:" destination="BV1-FR-VrT" id="Yzy-Ci-WP2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Use" id="TqB-MD-v0H">
+                                        <connections>
+                                            <action selector="doUse:" destination="BV1-FR-VrT" id="GuF-UO-go4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Fall" id="Vs8-G7-LZL">
+                                        <connections>
+                                            <action selector="doFall:" destination="BV1-FR-VrT" id="ybQ-mx-86n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>

@@ -12,13 +12,11 @@ class GameScene: SKScene {
     
     // 1
     let sheet = BasicPeople()
-    var sprite:SKSpriteNode
     
-    
+    var player:MoverProtocol
     override init(size: CGSize) {
-        sprite = SKSpriteNode(texture: sheet.movingPerson1_idle0001());
-        let walk = SKAction.animate(with: sheet.movingPerson1_walk(), timePerFrame: 0.033)
-        sprite.run(walk)
+        
+        self.player = BasicMover(sheet:sheet);
         super.init(size: size)
     }
     
@@ -26,13 +24,26 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func didMove(to view: SKView) {
-        // 2
         backgroundColor = SKColor.white
-        // 3
-        sprite.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
-        // 4
-        addChild(sprite)
+        player.sprite.position = CGPoint(x: size.width * 0.4, y: size.height * 0.5)
+        addChild(player.sprite)
     }
+    func doWalk()
+    {
+        player.doAction(action: "walk")
+    }
+    func doUse()
+    {
+        player.doAction(action: "use")
+    }
+    func doIdle()
+    {
+        player.doAction(action: "idle")
+    }
+    func doFall()
+    {
+        player.doAction(action: "fall")
+    }
+
 }
