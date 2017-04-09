@@ -11,7 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
     
     // 1
-   /* let sheet = BasicPeople()
+    let sheet = BasicPeople()
     var sprite:SKSpriteNode
     
     
@@ -34,5 +34,5 @@ class GameScene: SKScene {
         sprite.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         // 4
         addChild(sprite)
-    }*/
+    }
 }
