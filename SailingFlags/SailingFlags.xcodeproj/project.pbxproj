@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AA0E9AF1EA21A9F00F61044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9AE1EA21A9F00F61044 /* AppDelegate.swift */; };
+		5AA0E9B11EA21A9F00F61044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9B01EA21A9F00F61044 /* ViewController.swift */; };
+		5AA0E9B41EA21A9F00F61044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0E9B21EA21A9F00F61044 /* Main.storyboard */; };
+		5AA0E9B61EA21A9F00F61044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0E9B51EA21A9F00F61044 /* Assets.xcassets */; };
+		5AA0E9B91EA21A9F00F61044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0E9B71EA21A9F00F61044 /* LaunchScreen.storyboard */; };
+		5AA0E9C41EA21AA000F61044 /* SailingFlagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9C31EA21AA000F61044 /* SailingFlagsTests.swift */; };
+		5AA0E9CF1EA21AA000F61044 /* SailingFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9CE1EA21AA000F61044 /* SailingFlagsUITests.swift */; };
+		5AA0E9DD1EA21CF600F61044 /* FlagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9DC1EA21CF600F61044 /* FlagCollectionViewCell.swift */; };
+		5AA0E9DF1EA21D2C00F61044 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9DE1EA21D2C00F61044 /* Flag.swift */; };
+		5AA0E9E11EA21EBC00F61044 /* FlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9E01EA21EBC00F61044 /* FlagViewController.swift */; };
+		5AA0E9E31EA21F1700F61044 /* FlagDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0E9E21EA21F1700F61044 /* FlagDataSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AA0E9C01EA21AA000F61044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AA0E9A31EA21A9F00F61044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AA0E9AA1EA21A9F00F61044;
+			remoteInfo = SailingFlags;
+		};
+		5AA0E9CB1EA21AA000F61044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AA0E9A31EA21A9F00F61044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AA0E9AA1EA21A9F00F61044;
+			remoteInfo = SailingFlags;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AA0E9AB1EA21A9F00F61044 /* SailingFlags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailingFlags.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA0E9AE1EA21A9F00F61044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AA0E9B01EA21A9F00F61044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AA0E9B31EA21A9F00F61044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AA0E9B51EA21A9F00F61044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AA0E9B81EA21A9F00F61044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5AA0E9BA1EA21A9F00F61044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA0E9BF1EA21AA000F61044 /* SailingFlagsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SailingFlagsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA0E9C31EA21AA000F61044 /* SailingFlagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SailingFlagsTests.swift; sourceTree = "<group>"; };
+		5AA0E9C51EA21AA000F61044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA0E9CA1EA21AA000F61044 /* SailingFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SailingFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA0E9CE1EA21AA000F61044 /* SailingFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SailingFlagsUITests.swift; sourceTree = "<group>"; };
+		5AA0E9D01EA21AA000F61044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA0E9DC1EA21CF600F61044 /* FlagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5AA0E9DE1EA21D2C00F61044 /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		5AA0E9E01EA21EBC00F61044 /* FlagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagViewController.swift; sourceTree = "<group>"; };
+		5AA0E9E21EA21F1700F61044 /* FlagDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagDataSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AA0E9A81EA21A9F00F61044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0E9BC1EA21AA000F61044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0E9C71EA21AA000F61044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AA0E9A21EA21A9F00F61044 = {
+			isa = PBXGroup;
+			children = (
+				5AA0E9AD1EA21A9F00F61044 /* SailingFlags */,
+				5AA0E9C21EA21AA000F61044 /* SailingFlagsTests */,
+				5AA0E9CD1EA21AA000F61044 /* SailingFlagsUITests */,
+				5AA0E9AC1EA21A9F00F61044 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AA0E9AC1EA21A9F00F61044 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0E9AB1EA21A9F00F61044 /* SailingFlags.app */,
+				5AA0E9BF1EA21AA000F61044 /* SailingFlagsTests.xctest */,
+				5AA0E9CA1EA21AA000F61044 /* SailingFlagsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AA0E9AD1EA21A9F00F61044 /* SailingFlags */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0E9E41EA21F2100F61044 /* Flags */,
+				5AA0E9AE1EA21A9F00F61044 /* AppDelegate.swift */,
+				5AA0E9B01EA21A9F00F61044 /* ViewController.swift */,
+				5AA0E9B21EA21A9F00F61044 /* Main.storyboard */,
+				5AA0E9B51EA21A9F00F61044 /* Assets.xcassets */,
+				5AA0E9B71EA21A9F00F61044 /* LaunchScreen.storyboard */,
+				5AA0E9BA1EA21A9F00F61044 /* Info.plist */,
+			);
+			path = SailingFlags;
+			sourceTree = "<group>";
+		};
+		5AA0E9C21EA21AA000F61044 /* SailingFlagsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0E9C31EA21AA000F61044 /* SailingFlagsTests.swift */,
+				5AA0E9C51EA21AA000F61044 /* Info.plist */,
+			);
+			path = SailingFlagsTests;
+			sourceTree = "<group>";
+		};
+		5AA0E9CD1EA21AA000F61044 /* SailingFlagsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0E9CE1EA21AA000F61044 /* SailingFlagsUITests.swift */,
+				5AA0E9D01EA21AA000F61044 /* Info.plist */,
+			);
+			path = SailingFlagsUITests;
+			sourceTree = "<group>";
+		};
+		5AA0E9E41EA21F2100F61044 /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0E9E01EA21EBC00F61044 /* FlagViewController.swift */,
+				5AA0E9E21EA21F1700F61044 /* FlagDataSource.swift */,
+				5AA0E9DC1EA21CF600F61044 /* FlagCollectionViewCell.swift */,
+				5AA0E9DE1EA21D2C00F61044 /* Flag.swift */,
+			);
+			name = Flags;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AA0E9AA1EA21A9F00F61044 /* SailingFlags */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AA0E9D31EA21AA000F61044 /* Build configuration list for PBXNativeTarget "SailingFlags" */;
+			buildPhases = (
+				5AA0E9A71EA21A9F00F61044 /* Sources */,
+				5AA0E9A81EA21A9F00F61044 /* Frameworks */,
+				5AA0E9A91EA21A9F00F61044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SailingFlags;
+			productName = SailingFlags;
+			productReference = 5AA0E9AB1EA21A9F00F61044 /* SailingFlags.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AA0E9BE1EA21AA000F61044 /* SailingFlagsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AA0E9D61EA21AA000F61044 /* Build configuration list for PBXNativeTarget "SailingFlagsTests" */;
+			buildPhases = (
+				5AA0E9BB1EA21AA000F61044 /* Sources */,
+				5AA0E9BC1EA21AA000F61044 /* Frameworks */,
+				5AA0E9BD1EA21AA000F61044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AA0E9C11EA21AA000F61044 /* PBXTargetDependency */,
+			);
+			name = SailingFlagsTests;
+			productName = SailingFlagsTests;
+			productReference = 5AA0E9BF1EA21AA000F61044 /* SailingFlagsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5AA0E9C91EA21AA000F61044 /* SailingFlagsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AA0E9D91EA21AA000F61044 /* Build configuration list for PBXNativeTarget "SailingFlagsUITests" */;
+			buildPhases = (
+				5AA0E9C61EA21AA000F61044 /* Sources */,
+				5AA0E9C71EA21AA000F61044 /* Frameworks */,
+				5AA0E9C81EA21AA000F61044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AA0E9CC1EA21AA000F61044 /* PBXTargetDependency */,
+			);
+			name = SailingFlagsUITests;
+			productName = SailingFlagsUITests;
+			productReference = 5AA0E9CA1EA21AA000F61044 /* SailingFlagsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AA0E9A31EA21A9F00F61044 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Bryan Gough";
+				TargetAttributes = {
+					5AA0E9AA1EA21A9F00F61044 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					5AA0E9BE1EA21AA000F61044 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5AA0E9AA1EA21A9F00F61044;
+					};
+					5AA0E9C91EA21AA000F61044 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5AA0E9AA1EA21A9F00F61044;
+					};
+				};
+			};
+			buildConfigurationList = 5AA0E9A61EA21A9F00F61044 /* Build configuration list for PBXProject "SailingFlags" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AA0E9A21EA21A9F00F61044;
+			productRefGroup = 5AA0E9AC1EA21A9F00F61044 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AA0E9AA1EA21A9F00F61044 /* SailingFlags */,
+				5AA0E9BE1EA21AA000F61044 /* SailingFlagsTests */,
+				5AA0E9C91EA21AA000F61044 /* SailingFlagsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AA0E9A91EA21A9F00F61044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA0E9B91EA21A9F00F61044 /* LaunchScreen.storyboard in Resources */,
+				5AA0E9B61EA21A9F00F61044 /* Assets.xcassets in Resources */,
+				5AA0E9B41EA21A9F00F61044 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0E9BD1EA21AA000F61044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0E9C81EA21AA000F61044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AA0E9A71EA21A9F00F61044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA0E9B11EA21A9F00F61044 /* ViewController.swift in Sources */,
+				5AA0E9AF1EA21A9F00F61044 /* AppDelegate.swift in Sources */,
+				5AA0E9E31EA21F1700F61044 /* FlagDataSource.swift in Sources */,
+				5AA0E9E11EA21EBC00F61044 /* FlagViewController.swift in Sources */,
+				5AA0E9DD1EA21CF600F61044 /* FlagCollectionViewCell.swift in Sources */,
+				5AA0E9DF1EA21D2C00F61044 /* Flag.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0E9BB1EA21AA000F61044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA0E9C41EA21AA000F61044 /* SailingFlagsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0E9C61EA21AA000F61044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA0E9CF1EA21AA000F61044 /* SailingFlagsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AA0E9C11EA21AA000F61044 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AA0E9AA1EA21A9F00F61044 /* SailingFlags */;
+			targetProxy = 5AA0E9C01EA21AA000F61044 /* PBXContainerItemProxy */;
+		};
+		5AA0E9CC1EA21AA000F61044 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AA0E9AA1EA21A9F00F61044 /* SailingFlags */;
+			targetProxy = 5AA0E9CB1EA21AA000F61044 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AA0E9B21EA21A9F00F61044 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AA0E9B31EA21A9F00F61044 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AA0E9B71EA21A9F00F61044 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AA0E9B81EA21A9F00F61044 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AA0E9D11EA21AA000F61044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AA0E9D21EA21AA000F61044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AA0E9D41EA21AA000F61044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SailingFlags/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlags;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5AA0E9D51EA21AA000F61044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SailingFlags/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlags;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5AA0E9D71EA21AA000F61044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SailingFlagsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlagsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SailingFlags.app/SailingFlags";
+			};
+			name = Debug;
+		};
+		5AA0E9D81EA21AA000F61044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SailingFlagsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlagsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SailingFlags.app/SailingFlags";
+			};
+			name = Release;
+		};
+		5AA0E9DA1EA21AA000F61044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SailingFlagsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlagsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SailingFlags;
+			};
+			name = Debug;
+		};
+		5AA0E9DB1EA21AA000F61044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SailingFlagsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlagsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SailingFlags;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AA0E9A61EA21A9F00F61044 /* Build configuration list for PBXProject "SailingFlags" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA0E9D11EA21AA000F61044 /* Debug */,
+				5AA0E9D21EA21AA000F61044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AA0E9D31EA21AA000F61044 /* Build configuration list for PBXNativeTarget "SailingFlags" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA0E9D41EA21AA000F61044 /* Debug */,
+				5AA0E9D51EA21AA000F61044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AA0E9D61EA21AA000F61044 /* Build configuration list for PBXNativeTarget "SailingFlagsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA0E9D71EA21AA000F61044 /* Debug */,
+				5AA0E9D81EA21AA000F61044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AA0E9D91EA21AA000F61044 /* Build configuration list for PBXNativeTarget "SailingFlagsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA0E9DA1EA21AA000F61044 /* Debug */,
+				5AA0E9DB1EA21AA000F61044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AA0E9A31EA21A9F00F61044 /* Project object */;
+}

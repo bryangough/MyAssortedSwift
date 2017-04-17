@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Td-Id-X0D">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flags-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FlagViewController" customModule="SailingFlags" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Mv5-XK-3ev">
+                                <rect key="frame" x="0.0" y="60" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S3w-cz-kU5"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hov-Jn-XL7">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="2OG-S7-Zeo">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlagCollectionViewCell" id="A5z-Bj-6MP" customClass="FlagCollectionViewCell" customModule="SailingFlags" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EYc-3K-3MN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="70"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ0-lM-aaq">
+                                                    <rect key="frame" x="29" y="71" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="EYc-3K-3MN" secondAttribute="trailing" id="AwZ-3e-eFn"/>
+                                            <constraint firstItem="dZ0-lM-aaq" firstAttribute="centerX" secondItem="A5z-Bj-6MP" secondAttribute="centerX" id="RJd-uS-aX6"/>
+                                            <constraint firstItem="EYc-3K-3MN" firstAttribute="leading" secondItem="A5z-Bj-6MP" secondAttribute="leading" id="Wic-J9-FHn"/>
+                                            <constraint firstAttribute="bottom" secondItem="EYc-3K-3MN" secondAttribute="bottom" constant="30" id="Z9d-h8-IBQ"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="dZ0-lM-aaq" secondAttribute="bottom" id="dVV-q9-NZF"/>
+                                            <constraint firstItem="EYc-3K-3MN" firstAttribute="top" secondItem="A5z-Bj-6MP" secondAttribute="top" id="zGG-w2-JNq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageLabel" destination="dZ0-lM-aaq" id="Y0b-Rk-pTf"/>
+                                            <outlet property="imageView" destination="EYc-3K-3MN" id="uLZ-jK-FZs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hov-Jn-XL7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="QfC-fY-gbe"/>
+                            <constraint firstItem="Mv5-XK-3ev" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="UIp-6b-N61"/>
+                            <constraint firstItem="Hov-Jn-XL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b1S-Kh-N9j"/>
+                            <constraint firstItem="Mv5-XK-3ev" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h9T-GZ-5Hc"/>
+                            <constraint firstAttribute="bottom" secondItem="Hov-Jn-XL7" secondAttribute="bottom" id="pqz-5G-hsC"/>
+                            <constraint firstAttribute="trailing" secondItem="Hov-Jn-XL7" secondAttribute="trailing" id="syL-6b-ogS"/>
+                            <constraint firstAttribute="trailing" secondItem="Mv5-XK-3ev" secondAttribute="trailing" id="uhF-Li-mm6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Flags" id="u13-QQ-Mxb"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Hov-Jn-XL7" id="hn7-3g-Rbl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="far-ru-csP">
+            <objects>
+                <navigationController id="2Td-Id-X0D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I7F-sl-Uxx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vq6-Zm-xXm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpZ-9X-ZlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-854" y="37"/>
+        </scene>
+    </scenes>
+</document>

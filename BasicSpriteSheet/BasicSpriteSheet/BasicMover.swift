@@ -11,7 +11,7 @@ import SpriteKit
 
 class BasicMover: MoverProtocol {
     
-    // 1
+    //
     var sheet:BasicPeople
     var sprite:SKSpriteNode
     let animationTime:TimeInterval = 0.1
@@ -38,6 +38,10 @@ class BasicMover: MoverProtocol {
         actions["staydown"] = SKAction.animate(with: [sheet.movingPerson1_die0007()], timePerFrame: animationTime, resize: true, restore: true)
         actions["stayDownForever"] = SKAction.repeatForever(actions["staydown"]!)
     }
+    //
+    
+    
+    //
     func doAction(action:String)
     {
         switch action {
@@ -53,14 +57,16 @@ class BasicMover: MoverProtocol {
             doIdle()
         }
     }
-    func getAction(_ action:String)->SKAction
+    //
+    func getAction(_ action:String) ->SKAction
     {
-        if let skaction = actions[action]
+        guard let skaction = actions[action] else
         {
-            return skaction
+            return actions["idle"]!
         }
-        return actions["idle"]!
+        return skaction
     }
+    //
     func doWalk()
     {
         sprite.run(getAction("walkforever"))
