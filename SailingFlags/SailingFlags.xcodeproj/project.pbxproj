@@ -213,6 +213,7 @@
 				TargetAttributes = {
 					5AA0E9AA1EA21A9F00F61044 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 53THWC9JX9;
 						ProvisioningStyle = Automatic;
 					};
 					5AA0E9BE1EA21AA000F61044 = {
@@ -436,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 53THWC9JX9;
 				INFOPLIST_FILE = SailingFlags/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlags;
@@ -448,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 53THWC9JX9;
 				INFOPLIST_FILE = SailingFlags/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryangough.SailingFlags;

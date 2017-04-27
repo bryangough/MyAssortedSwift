@@ -12,6 +12,9 @@ class FlagViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // @IBOutlet var imageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     let flagDataSource = FlagDataSource()
     
@@ -85,7 +88,7 @@ class FlagViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - SEARCH
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("searchBarSearchButtonClicked \(searchBar.text)")
+        print("searchBarSearchButtonClicked \(String(describing: searchBar.text))")
         //if(!(searchBar.text?.isEmpty)!){
             //reload your data source if necessary
             flagDataSource.search(value: searchBar.text!)
