@@ -12,6 +12,10 @@ import UIKit
 import CoreMotion
 import Photos
 
+enum PictureLevelErrors: Error {
+    case noCameraView
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CameraWithLevelDelegate {
     
     @IBOutlet var XValue: UILabel!
@@ -19,9 +23,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var ZValue: UILabel!
     @IBOutlet weak var imagePicked: UIImageView!
     
+    let variance:Float = 0.1
+    let store:LeveledPictureStore = LeveledPictureStore()
+    var currentPic:LeveledPicture?
+    
+    var toggleShooting:Bool = false;
     var timer:Timer = Timer()
     var motionManager: CMMotionManager!
     var imagePicker:UIImagePickerController = UIImagePickerController()
+    var currentCameraView:CameraWithLevelView?
+    var takingPicture:Bool = false;
     
     @IBAction func openCameraTouch(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
@@ -41,20 +52,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.dismiss(animated: true, completion: nil)
     }
     func didShoot(overlayView:CameraWithLevelView) {
-        print("didShoot")
-        imagePicker.takePicture()
+        
+        toggleShooting = !toggleShooting
+        print("didShoot \(toggleShooting)")
+        if toggleShooting
+        {
+            runTimer()
+            overlayView.shootingPics()
+            currentCameraView = overlayView
+        }
+        else
+        {
+            overlayView.stopShooting()
+            currentCameraView = nil
+            timer.invalidate()
+        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        XValue.text = "x"
-        YValue.text = "y"
-        ZValue.text = "z"
-        /*motionManager = CMMotionManager()
-        motionManager.startAccelerometerUpdates()
-        runTimer()*/
-        print("view appeared")
+        
         
     }
     
@@ -63,23 +81,62 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func updateTimer() {
-        if let accelerometerData = motionManager.accelerometerData {
-            XValue.text = String(accelerometerData.acceleration.x)
-            YValue.text = String(accelerometerData.acceleration.y)
-            ZValue.text = String(accelerometerData.acceleration.z)
+        if toggleShooting
+        {
+            
+            do {
+                
+                let pic:LeveledPicture = LeveledPicture()
+                let tryPic = try checkPic(pic:pic)
+                
+                if tryPic
+                {
+                    if takingPicture
+                    {
+                        return
+                    }
+                    takingPicture = true;
+                    currentPic = pic
+                    imagePicker.takePicture()
+                }
+            }
+            catch {
+                print("No camera view.")
+                dismiss(animated: true, completion: nil)//?
+            }
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String: Any]) {
-        
+        takingPicture = false
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        //imageStore.setImage(image, forKey: item.itemKey)
+        guard let pic = currentPic else
+        {
+                return
+        }
+        //imageStore.setImage(image, forKey: pic.key)
+        store.addItem(pic)
         imagePicked.image = image
-        
-        saveImageToPictures(image: image)
-        
         dismiss(animated: true, completion: nil)
+        //
+        //print("Save pic \(info)")
+    }
+    func checkPic(pic:LeveledPicture)throws ->Bool {
+        guard let view = currentCameraView else {
+            throw PictureLevelErrors.noCameraView
+        }
+        
+        if view.getCurrentLevels()==nil || view.syncedValue==nil
+        {
+            return false
+        }
+        pic.setLevels(level: view.getCurrentLevels()!, sync:view.syncedValue!)
+        if(pic.testAllVariance(variance: variance))
+        {
+            return true;
+        }
+        return false;
     }
     func saveImageToPictures(image:UIImage)
     {
@@ -91,10 +148,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             else if let error = error {
                 print("\(error)")
-                // Save photo failed with error
             }
             else {
-                // Save photo failed with no error
+                print("Picture didn't save.")
             }
         })
     }

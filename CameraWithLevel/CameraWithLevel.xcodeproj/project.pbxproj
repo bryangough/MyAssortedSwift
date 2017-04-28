@@ -10,6 +10,10 @@
 		5A2A22611EB240FF0088243A /* LineUpLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A22601EB240FF0088243A /* LineUpLines.swift */; };
 		5A56E0241EB2351100327E6C /* CameraWithLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56E0231EB2351100327E6C /* CameraWithLevelView.swift */; };
 		5A56E0261EB2375A00327E6C /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A56E0251EB2375A00327E6C /* CameraView.xib */; };
+		5A73627E1EB2862500CD3E98 /* LevelBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73627D1EB2862500CD3E98 /* LevelBar.swift */; };
+		5A7362801EB2AF3900CD3E98 /* LeveledPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73627F1EB2AF3900CD3E98 /* LeveledPicture.swift */; };
+		5A7362821EB2B17400CD3E98 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7362811EB2B17400CD3E98 /* ImageStore.swift */; };
+		5A7362841EB2BBD100CD3E98 /* LeveledPictureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7362831EB2BBD100CD3E98 /* LeveledPictureStore.swift */; };
 		5ADB0CBE1EB12DD600F89B3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADB0CBD1EB12DD600F89B3B /* AppDelegate.swift */; };
 		5ADB0CC01EB12DD600F89B3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADB0CBF1EB12DD600F89B3B /* ViewController.swift */; };
 		5ADB0CC31EB12DD600F89B3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ADB0CC11EB12DD600F89B3B /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 		5A2A22601EB240FF0088243A /* LineUpLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineUpLines.swift; sourceTree = "<group>"; };
 		5A56E0231EB2351100327E6C /* CameraWithLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraWithLevelView.swift; sourceTree = "<group>"; };
 		5A56E0251EB2375A00327E6C /* CameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraView.xib; sourceTree = "<group>"; };
+		5A73627D1EB2862500CD3E98 /* LevelBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelBar.swift; sourceTree = "<group>"; };
+		5A73627F1EB2AF3900CD3E98 /* LeveledPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeveledPicture.swift; sourceTree = "<group>"; };
+		5A7362811EB2B17400CD3E98 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		5A7362831EB2BBD100CD3E98 /* LeveledPictureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeveledPictureStore.swift; sourceTree = "<group>"; };
 		5ADB0CBA1EB12DD600F89B3B /* CameraWithLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraWithLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADB0CBD1EB12DD600F89B3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ADB0CBF1EB12DD600F89B3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +113,11 @@
 			children = (
 				5ADB0CBD1EB12DD600F89B3B /* AppDelegate.swift */,
 				5ADB0CBF1EB12DD600F89B3B /* ViewController.swift */,
+				5A73627F1EB2AF3900CD3E98 /* LeveledPicture.swift */,
+				5A7362831EB2BBD100CD3E98 /* LeveledPictureStore.swift */,
+				5A7362811EB2B17400CD3E98 /* ImageStore.swift */,
 				5A56E0251EB2375A00327E6C /* CameraView.xib */,
+				5A73627D1EB2862500CD3E98 /* LevelBar.swift */,
 				5A56E0231EB2351100327E6C /* CameraWithLevelView.swift */,
 				5A2A22601EB240FF0088243A /* LineUpLines.swift */,
 				5ADB0CC11EB12DD600F89B3B /* Main.storyboard */,
@@ -273,6 +285,10 @@
 				5A2A22611EB240FF0088243A /* LineUpLines.swift in Sources */,
 				5A56E0241EB2351100327E6C /* CameraWithLevelView.swift in Sources */,
 				5ADB0CC01EB12DD600F89B3B /* ViewController.swift in Sources */,
+				5A73627E1EB2862500CD3E98 /* LevelBar.swift in Sources */,
+				5A7362801EB2AF3900CD3E98 /* LeveledPicture.swift in Sources */,
+				5A7362821EB2B17400CD3E98 /* ImageStore.swift in Sources */,
+				5A7362841EB2BBD100CD3E98 /* LeveledPictureStore.swift in Sources */,
 				5ADB0CBE1EB12DD600F89B3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

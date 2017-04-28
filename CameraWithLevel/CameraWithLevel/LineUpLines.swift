@@ -7,26 +7,53 @@
 //
 
 import UIKit
-
+@IBDesignable
 
 class LineUpLines:UIView
 {
     override func draw(_ rect: CGRect) {
-        let aPath = UIBezierPath()
         
-        aPath.move(to: CGPoint(x:20, y:50))
+        /*let path = UIBezierPath(ovalIn: rect)
+        UIColor.blue.setFill()
+        path.fill()*/
         
-        aPath.addLine(to: CGPoint(x:300, y:50))
+        //set up the width and height variables
+        //for the horizontal stroke
+        let plusHeight: CGFloat = 3.0
+        let plusWidth: CGFloat = min(bounds.width, bounds.height) * 0.6
         
-        //Keep using the method addLineToPoint until you get to the one where about to close the path
+        //create the path
+        let plusPath = UIBezierPath()
         
-        aPath.close()
+        //set the path's line width to the height of the stroke
+        plusPath.lineWidth = plusHeight
         
-        //If you want to stroke it with a red color
-        UIColor.red.set()
-        aPath.stroke()
-        //If you want to fill it as well
-        aPath.fill()
+        plusPath.move(to: CGPoint(
+            x:bounds.width/2 - plusWidth/2 + 0.5,
+            y:bounds.height/2 + 0.5))
+        
+        //add a point to the path at the end of the stroke
+        plusPath.addLine(to: CGPoint(
+            x:bounds.width/2 + plusWidth/2 + 0.5,
+            y:bounds.height/2 + 0.5))
+        
+        //Vertical Line
+        
+        //move to the start of the vertical stroke
+        plusPath.move(to: CGPoint(
+            x:bounds.width/2 + 0.5,
+            y:bounds.height/2 - plusWidth/2 + 0.5))
+        
+        //add the end point to the vertical stroke
+        plusPath.addLine(to: CGPoint(
+            x:bounds.width/2 + 0.5,
+            y:bounds.height/2 + plusWidth/2 + 0.5))
+        
+        //set the stroke color
+        UIColor.white.setStroke()
+        
+        //draw the stroke
+        plusPath.stroke()
     }
 
 }

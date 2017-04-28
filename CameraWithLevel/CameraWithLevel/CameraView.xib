@@ -103,22 +103,83 @@
                         <action selector="syncPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="dfC-VM-Vj4"/>
                     </connections>
                 </button>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4x-AE-atE" customClass="LineUpLines" customModule="CameraWithLevel" customModuleProvider="target">
+                    <rect key="frame" x="110" y="234" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="ICA-jO-W0T"/>
+                        <constraint firstAttribute="width" constant="100" id="j53-dY-1LK"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0U6-vc-Kdw">
+                    <rect key="frame" x="0.0" y="50" width="320" height="30"/>
+                    <subviews>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o29-qV-kWq" customClass="LevelBar" customModule="CameraWithLevel" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="MUb-9k-pUY"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="positon">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1R9-YL-AJe" customClass="LevelBar" customModule="CameraWithLevel" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="10" width="320" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="hGF-B5-x67"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="positon">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                    <color key="value" red="0.0" green="0.94901960780000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vi5-5g-dXB" customClass="LevelBar" customModule="CameraWithLevel" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="20" width="320" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="ZK4-5v-PrJ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="positon">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                    <color key="value" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="EMd-Dy-JGg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="11p-9S-gvv"/>
+                <constraint firstItem="0U6-vc-Kdw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="28h-rU-fKC"/>
+                <constraint firstItem="q4x-AE-atE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2Aw-q0-eQ3"/>
                 <constraint firstItem="wQ6-Bn-Frc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6yf-qv-OEV"/>
                 <constraint firstAttribute="bottom" secondItem="xBf-Hp-EzB" secondAttribute="bottom" id="KrM-mS-G9e"/>
                 <constraint firstAttribute="trailing" secondItem="PLL-yx-w5P" secondAttribute="trailing" id="SBw-6c-t1w"/>
+                <constraint firstItem="0U6-vc-Kdw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="V9I-Bn-Des"/>
                 <constraint firstItem="xBf-Hp-EzB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XBW-UQ-dTt"/>
                 <constraint firstItem="wQ6-Bn-Frc" firstAttribute="top" secondItem="EMd-Dy-JGg" secondAttribute="bottom" id="Xbd-gh-fZK"/>
                 <constraint firstItem="xBf-Hp-EzB" firstAttribute="top" secondItem="EMd-Dy-JGg" secondAttribute="bottom" id="d4E-OI-8Sz"/>
+                <constraint firstAttribute="trailing" secondItem="0U6-vc-Kdw" secondAttribute="trailing" id="iSH-vA-pZI"/>
+                <constraint firstItem="0U6-vc-Kdw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="kZk-nm-rxE"/>
                 <constraint firstAttribute="bottom" secondItem="wQ6-Bn-Frc" secondAttribute="bottom" id="n5l-ED-547"/>
+                <constraint firstItem="q4x-AE-atE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="oFF-Ci-kmh"/>
                 <constraint firstAttribute="bottom" secondItem="PLL-yx-w5P" secondAttribute="bottom" id="ujP-9s-zny"/>
             </constraints>
             <connections>
-                <outlet property="XValue" destination="9Ct-mo-qXJ" id="F0d-Hm-ovR"/>
-                <outlet property="YValue" destination="DFr-87-trG" id="Vxb-yS-SnX"/>
-                <outlet property="ZValue" destination="w0r-vp-uFJ" id="vdH-om-Vmy"/>
+                <outlet property="XBar" destination="o29-qV-kWq" id="H7x-Zt-vRh"/>
+                <outlet property="YBar" destination="1R9-YL-AJe" id="cSz-Q0-ana"/>
+                <outlet property="ZBar" destination="vi5-5g-dXB" id="wwI-UX-r6s"/>
+                <outlet property="shootToggleButton" destination="wQ6-Bn-Frc" id="UQa-DO-GdP"/>
                 <outlet property="syncdLabel" destination="BXR-Tz-ExK" id="7oU-jG-Awj"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="146.5"/>
