@@ -12,7 +12,7 @@ import UIKit
 class LineUpLines:UIView
 {
     override func draw(_ rect: CGRect) {
-        
+        //return
         /*let path = UIBezierPath(ovalIn: rect)
         UIColor.blue.setFill()
         path.fill()*/

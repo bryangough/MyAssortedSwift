@@ -15,6 +15,9 @@ import Photos
 enum PictureLevelErrors: Error {
     case noCameraView
 }
+struct GlobalVariables {
+    static var variance:Float = 0.1
+}
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CameraWithLevelDelegate {
     
@@ -23,7 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var ZValue: UILabel!
     @IBOutlet weak var imagePicked: UIImageView!
     
-    let variance:Float = 0.1
+    //let variance:Float = 0.1
     let store:LeveledPictureStore = LeveledPictureStore()
     var currentPic:LeveledPicture?
     
@@ -33,8 +36,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var imagePicker:UIImagePickerController = UIImagePickerController()
     var currentCameraView:CameraWithLevelView?
     var takingPicture:Bool = false;
+    var _syncedValue:CMAcceleration?
     
     @IBAction func openCameraTouch(_ sender: Any) {
+        openCamera()
+    }
+    func openCamera(){
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let customView:CameraWithLevelView = CameraWithLevelView.instanceFromNib() as! CameraWithLevelView
             customView.delegate = self
@@ -44,6 +51,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.allowsEditing = false
             imagePicker.cameraOverlayView = customView
             imagePicker.showsCameraControls = false
+            
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -69,11 +77,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
-    
+    //
+    var syncedValue:CMAcceleration{
+        get{
+            return _syncedValue!
+        }
+        set{
+            _syncedValue = newValue
+        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
+        openCamera();
     }
     
     func runTimer() {
@@ -132,7 +148,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return false
         }
         pic.setLevels(level: view.getCurrentLevels()!, sync:view.syncedValue!)
-        if(pic.testAllVariance(variance: variance))
+        if(pic.testAllVariance(variance: GlobalVariables.variance))
         {
             return true;
         }

@@ -13,28 +13,18 @@ import CoreMotion
 protocol CameraWithLevelDelegate{
     func didCancel(overlayView:CameraWithLevelView)
     func didShoot(overlayView:CameraWithLevelView)
+    var syncedValue:CMAcceleration{get set}
 }
 
 class CameraWithLevelView: UIView
 {
+    @IBOutlet var DualBar: DualLevelBar!
+    @IBOutlet var shootToggleButton: UIButton!
 
     var timer:Timer = Timer()
     var motionManager: CMMotionManager!
     var delegate:CameraWithLevelDelegate! = nil
-    
-    @IBOutlet var XBar: LevelBar!
-    @IBOutlet var YBar: LevelBar!
-    @IBOutlet var ZBar: LevelBar!
-    
-    /*@IBOutlet var XValue: UILabel!
-    @IBOutlet var YValue: UILabel!
-    @IBOutlet var ZValue: UILabel!*/
-    @IBOutlet var syncdLabel: UILabel!
-    @IBOutlet var shootToggleButton: UIButton!
-    
-    
-    var syncedValue:CMAcceleration?;
-    //var currentValue:CMAcceleration?;
+    var syncedValue:CMAcceleration?;    
     
     @IBAction func shootPic(_ sender: Any) {
         delegate.didShoot(overlayView: self)
@@ -43,15 +33,8 @@ class CameraWithLevelView: UIView
         delegate.didCancel(overlayView: self)
     }
     @IBAction func syncPress(_ sender: Any) {
-        var str = ""
         if let accelerometerData = motionManager.accelerometerData {
-            str = String(accelerometerData.acceleration.x)
-            str += String(accelerometerData.acceleration.y)
-            str += String(accelerometerData.acceleration.z)
-            
-            XBar.syncPositon = CGFloat(accelerometerData.acceleration.x)
-            YBar.syncPositon = CGFloat(accelerometerData.acceleration.y)
-            ZBar.syncPositon = CGFloat(accelerometerData.acceleration.z)
+            DualBar.setSyncPosition(x: CGFloat(accelerometerData.acceleration.x), y: CGFloat(accelerometerData.acceleration.y))
             syncedValue = accelerometerData.acceleration;
         }
         //syncdLabel.text = str
@@ -68,9 +51,6 @@ class CameraWithLevelView: UIView
         if newWindow == nil {
             timer.invalidate()
         } else {
-          //  XValue.text = "x"
-           // YValue.text = "y"
-           // ZValue.text = "z"
             motionManager = CMMotionManager()
             motionManager.startAccelerometerUpdates()
             runTimer()
@@ -90,17 +70,8 @@ class CameraWithLevelView: UIView
     
     func updateTimer() {
         if let accelerometerData = motionManager.accelerometerData {
-           // XValue.text = String(accelerometerData.acceleration.x)
-           // YValue.text = String(accelerometerData.acceleration.y)
-           // ZValue.text = String(accelerometerData.acceleration.z)
-            
-            XBar.positon = CGFloat(accelerometerData.acceleration.x)
-            YBar.positon = CGFloat(accelerometerData.acceleration.y)
-            ZBar.positon = CGFloat(accelerometerData.acceleration.z)
-            
-            XBar.setNeedsDisplay()
-            YBar.setNeedsDisplay()
-            ZBar.setNeedsDisplay()
+            DualBar.setPosition(x: CGFloat(accelerometerData.acceleration.x), y: CGFloat(accelerometerData.acceleration.y))
+            DualBar.setNeedsDisplay();
         }
     }
     
