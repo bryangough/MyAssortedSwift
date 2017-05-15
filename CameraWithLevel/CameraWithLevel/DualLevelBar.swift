@@ -45,23 +45,15 @@ class DualLevelBar:UIView
     override func draw(_ rect: CGRect) {
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
+        let path2 = UIBezierPath()
+        path2.lineWidth = plusSize
+        let newSyncPosition2:CGPoint = CGPoint(x: syncPositon.x*bounds.width/2+center.x, y: syncPositon.y*bounds.height/2+center.y)
+        drawSquare(path:path2, newPosition: newSyncPosition2, colour: UIColor.white)
+
         let path = UIBezierPath()
         path.lineWidth = plusSize
-        let newPosition:CGPoint = CGPoint(x: positon.x*bounds.width/2, y: positon.y*bounds.height/2)
-        //drawSquare(path:path, newPosition: newPosition, colour: UIColor.white)
-        print("\(newPosition) ")
-        
-        
-        /*let path2 = UIBezierPath()
-        path2.lineWidth = plusSize
-        let newSyncPosition:CGPoint = CGPoint(x: syncPositon.x*bounds.width/2, y: syncPositon.y*bounds.height/2)
-        drawSquare(path:path2, newPosition: newSyncPosition, colour: fillColor)*/
-
-        
-        let path2 = UIBezierPath()
-         path2.lineWidth = plusSize
         let newSyncPosition:CGPoint = CGPoint(x: positon.x*bounds.width/2+center.x, y: positon.y*bounds.height/2+center.y);
-         drawSquare(path:path2, newPosition: newSyncPosition, colour: fillColor)
+        drawSquare(path:path, newPosition: newSyncPosition, colour: fillColor)
 
     }
 

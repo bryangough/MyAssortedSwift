@@ -92,10 +92,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A46690A1EC0DAB9004CDB8A /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				5A4669101EC0DB2C004CDB8A /* Graphics */,
+				5A56E0251EB2375A00327E6C /* CameraView.xib */,
+				5A56E0231EB2351100327E6C /* CameraWithLevelView.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		5A46690B1EC0DAE1004CDB8A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		5A46690C1EC0DAEC004CDB8A /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				5A73627F1EB2AF3900CD3E98 /* LeveledPicture.swift */,
+				5A7362831EB2BBD100CD3E98 /* LeveledPictureStore.swift */,
+				5A7362811EB2B17400CD3E98 /* ImageStore.swift */,
+			);
+			name = Picture;
+			sourceTree = "<group>";
+		};
+		5A46690D1EC0DB04004CDB8A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E0EC11EBA2F3D00A8A44C /* SettingViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		5A46690E1EC0DB09004CDB8A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5ADB0CBD1EB12DD600F89B3B /* AppDelegate.swift */,
+				5ADB0CC41EB12DD600F89B3B /* Assets.xcassets */,
+				5ADB0CC61EB12DD600F89B3B /* LaunchScreen.storyboard */,
+				5ADB0CC91EB12DD600F89B3B /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		5A46690F1EC0DB1F004CDB8A /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				5ADB0CBF1EB12DD600F89B3B /* ViewController.swift */,
+				5ADB0CC11EB12DD600F89B3B /* Main.storyboard */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		5A4669101EC0DB2C004CDB8A /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E0EC31EBB5EA500A8A44C /* DualLevelBar.swift */,
+				5A73627D1EB2862500CD3E98 /* LevelBar.swift */,
+				5A2A22601EB240FF0088243A /* LineUpLines.swift */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		5ADB0CB11EB12DD600F89B3B = {
 			isa = PBXGroup;
 			children = (
 				5ADB0CBC1EB12DD600F89B3B /* CameraWithLevel */,
+				5A46690B1EC0DAE1004CDB8A /* New Group */,
 				5ADB0CD11EB12DD600F89B3B /* CameraWithLevelTests */,
 				5ADB0CDC1EB12DD600F89B3B /* CameraWithLevelUITests */,
 				5ADB0CBB1EB12DD600F89B3B /* Products */,
@@ -115,21 +181,11 @@
 		5ADB0CBC1EB12DD600F89B3B /* CameraWithLevel */ = {
 			isa = PBXGroup;
 			children = (
-				5ADB0CBD1EB12DD600F89B3B /* AppDelegate.swift */,
-				5ADB0CBF1EB12DD600F89B3B /* ViewController.swift */,
-				5A73627F1EB2AF3900CD3E98 /* LeveledPicture.swift */,
-				5A7362831EB2BBD100CD3E98 /* LeveledPictureStore.swift */,
-				5A7362811EB2B17400CD3E98 /* ImageStore.swift */,
-				5A56E0251EB2375A00327E6C /* CameraView.xib */,
-				5A1E0EC31EBB5EA500A8A44C /* DualLevelBar.swift */,
-				5A73627D1EB2862500CD3E98 /* LevelBar.swift */,
-				5A56E0231EB2351100327E6C /* CameraWithLevelView.swift */,
-				5A2A22601EB240FF0088243A /* LineUpLines.swift */,
-				5ADB0CC11EB12DD600F89B3B /* Main.storyboard */,
-				5ADB0CC41EB12DD600F89B3B /* Assets.xcassets */,
-				5ADB0CC61EB12DD600F89B3B /* LaunchScreen.storyboard */,
-				5ADB0CC91EB12DD600F89B3B /* Info.plist */,
-				5A1E0EC11EBA2F3D00A8A44C /* SettingViewController.swift */,
+				5A46690F1EC0DB1F004CDB8A /* MainView */,
+				5A46690E1EC0DB09004CDB8A /* App */,
+				5A46690D1EC0DB04004CDB8A /* Settings */,
+				5A46690C1EC0DAEC004CDB8A /* Picture */,
+				5A46690A1EC0DAB9004CDB8A /* Camera */,
 			);
 			path = CameraWithLevel;
 			sourceTree = "<group>";

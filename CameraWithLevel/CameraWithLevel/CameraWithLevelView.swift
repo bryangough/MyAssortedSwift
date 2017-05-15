@@ -45,6 +45,33 @@ class CameraWithLevelView: UIView
         }
         return nil
     }
+    //http://stackoverflow.com/questions/26682450/set-camera-focus-on-tap-point-with-swift
+   /* override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = videoView.bounds.size
+        if let touchPoint = touches.first {
+            let x = touchPoint.location(in: videoView).y / screenSize.height
+            let y = 1.0 - touchPoint.location(in: videoView).x / screenSize.width
+            let focusPoint = CGPoint(x: x, y: y)
+            
+            if let device = captureDevice {
+                do {
+                    try device.lockForConfiguration()
+                    
+                    device.focusPointOfInterest = focusPoint
+                    //device.focusMode = .continuousAutoFocus
+                    device.focusMode = .autoFocus
+                    //device.focusMode = .locked
+                    device.exposurePointOfInterest = focusPoint
+                    device.exposureMode = AVCaptureExposureMode.continuousAutoExposure
+                    device.unlockForConfiguration()
+                }
+                catch {
+                    // just ignore
+                }
+            }
+        }
+    }*/
+
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         
@@ -79,5 +106,6 @@ class CameraWithLevelView: UIView
     class func instanceFromNib() -> UIView {
         return UINib(nibName: "CameraView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
+    
     
 }

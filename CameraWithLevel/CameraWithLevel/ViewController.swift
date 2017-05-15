@@ -170,5 +170,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         })
     }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        
+        if(screenWidth > screenHeight){
+            //Landscape
+            print("Landscape")
+        }
+        else{
+            print("Portrait")
+            //Portrait
+        }
+        super.viewWillTransition(to: size, with: coordinator)
+    }
 }
 
