@@ -92,7 +92,7 @@ class CameraWithLevelView: UIView
         shootToggleButton.setTitle("Start", for: .normal)
     }
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self,   selector: (#selector(CameraViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
     func updateTimer() {

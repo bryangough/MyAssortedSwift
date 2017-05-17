@@ -24,6 +24,18 @@ public struct Vector3 {
         self.z = z
     }
 }
+public struct Vector2 {
+    public var x: Float
+    public var y: Float
+    init() {
+        self.x = 0.0
+        self.y = 0.0
+    }
+    init(_ x:Float,_ y:Float) {
+        self.x = x
+        self.y = y
+    }
+}
 
 class LeveledPicture: NSObject, NSCoding
 {
@@ -102,5 +114,8 @@ class LeveledPicture: NSObject, NSCoding
         //aCoder.encode(name, forKey: "name")
         aCoder.encode(dateCreated, forKey: "dateCreated")
         aCoder.encode(imageKey, forKey: "imageKey")
+        aCoder.encode(levels.x, forKey: "levelx")
+        aCoder.encode(levels.y, forKey: "levely")
+        aCoder.encode(levels.z, forKey: "levelz")
     }
 }

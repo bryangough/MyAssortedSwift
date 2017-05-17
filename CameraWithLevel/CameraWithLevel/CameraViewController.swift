@@ -19,7 +19,7 @@ struct GlobalVariables {
     static var variance:Float = 0.1
 }
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CameraWithLevelDelegate {
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CameraWithLevelDelegate {
     
     @IBOutlet var XValue: UILabel!
     @IBOutlet var YValue: UILabel!
@@ -93,7 +93,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self,   selector: (#selector(CameraViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
     func updateTimer() {
