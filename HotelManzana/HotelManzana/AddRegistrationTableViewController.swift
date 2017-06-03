@@ -40,10 +40,16 @@ func ==(lhs: RoomType, rhs: RoomType) -> Bool {
     return lhs.id == rhs.id
 }
 
+protocol EditExistingRoomDelegate {
+    func setRegistration(inReg: Registration)
+}
 
 
-class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeTableViewControllerDelegate {
+class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeTableViewControllerDelegate, EditExistingRoomDelegate {
 
+    
+    
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -65,8 +71,10 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
     @IBOutlet var roomTypeLabel: UILabel!
     var roomType: RoomType?
     
+    @IBOutlet var doneButton: UIBarButtonItem!
     
     @IBAction func wifiSwitchChanged(_ sender: Any) {
+        updateTotals()
     }
     
     let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
@@ -82,6 +90,14 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         }
     }
     
+    func updateDoneButton(){
+        if registration == nil{
+            doneButton.isEnabled = false
+        }
+        else{
+            doneButton.isEnabled = true
+        }
+    }
     
     func updateNumberOfGuests(){
         numberOfAdultsLabel.text = "\(Int(numberofAdultsStepper.value))"
@@ -95,23 +111,9 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
         updateDateViews()
+        
     }
     
-    @IBAction func doneBarButtonTouched(_ sender: Any) {
-        let firstName = firstNameTextField.text ?? ""
-        let lastName = lastNameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let checkInDate = checkInDatePicker.date
-        let checkOutDate = checkOutDatePicker.date
-        
-        print("DONE TAPPED")
-        print("firstName: \(firstName)")
-        print("lastName: \(lastName)")
-        print("email: \(email)")
-        print("checkIn: \(checkInDate)")
-        print("checkOut: \(checkOutDate)")
-        
-    }
     
     func updateDateViews()
     {
@@ -123,6 +125,7 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         
         checkInDateLabel.text = dateFormatter.string(from: checkInDatePicker.date)
         checkOutDateLabel.text = dateFormatter.string(from: checkOutDatePicker.date)
+        updateTotals()
     }
 
     
@@ -136,6 +139,8 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         updateDateViews()
         updateNumberOfGuests()
         updateRoomType()
+        updateDoneButton()
+        updateTotals()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -199,19 +204,115 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         } else {
             roomTypeLabel.text = "Not Set"
         }
+        updateDoneButton()
+        updateTotals()
     }
     func didSelect(roomType: RoomType) {
         self.roomType = roomType
         updateRoomType()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SelectRoomType" {
-            let destinationViewController = segue.destination as?
-            SelectRoomTypeTableViewController
+            let destinationViewController = segue.destination as? SelectRoomTypeTableViewController
             destinationViewController?.delegate = self
             destinationViewController?.roomType = roomType
         }
+        
+    }
+    
+    var registration: Registration? {
+        
+        guard let roomType = roomType else { return nil }
+        
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let checkInDate = checkInDatePicker.date
+        let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberofAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
+
+        return Registration(firstName: firstName,
+                            lastName: lastName,
+                            emailAddress: email,
+                            checkInDate: checkInDate,
+                            checkOutDate: checkOutDate,
+            numberOfAdults: numberOfAdults,
+            numberOfChildren: numberOfChildren,
+            roomType: roomType,
+            wifi: hasWifi)
+    }
+    func setRegistration(inReg:Registration)
+    {
+        print("set reg \(inReg)")
+        firstNameTextField.text = inReg.firstName
+        lastNameTextField.text = inReg.lastName
+        emailTextField.text = inReg.emailAddress
+        checkInDatePicker.date = inReg.checkInDate
+        checkOutDatePicker.date  = inReg.checkOutDate
+        numberofAdultsStepper.value = Double(inReg.numberOfAdults)
+        numberOfChildrenStepper.value = Double(inReg.numberOfChildren)
+        roomType = inReg.roomType
+        wifiSwitch.isOn = inReg.wifi
+        
+    }
+    
+    @IBAction func cancelButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+   
+    @IBOutlet var numberOfNightsLabel: UILabel!
+    @IBOutlet var roomTypeCost: UILabel!
+    @IBOutlet var roomTypeShort: UILabel!
+    @IBOutlet var wifiBool: UILabel!
+    @IBOutlet var wifiCost: UILabel!
+    @IBOutlet var TotalCost: UILabel!
+    
+    func updateTotals()
+    {
+        let date = checkOutDatePicker.date
+        let f = date.timeIntervalSince(checkInDatePicker.date)
+        
+        let numDays:Int = Int(f/86400)
+        numberOfNightsLabel.text = "\(numDays)"
+        var roomCostVal = 0
+        
+        if let roomType = roomType {
+            roomCostVal = numDays * roomType.price
+            roomTypeShort.text = roomType.shortName
+        }
+        else
+        {
+            roomTypeShort.text = ""
+        }
+        roomTypeCost.text = "\(roomCostVal)"
+        
+        var wifiCostVal = 10 * numDays
+        
+        
+        if wifiSwitch.isOn
+        {
+            wifiBool.text = "YES"
+        }
+        else
+        {
+            wifiBool.text = "NO"
+        }
+        
+        if(wifiSwitch.isOn)
+        {
+            wifiCost.text = "\(wifiCostVal)"
+        }
+        else
+        {
+            wifiCost.text = "0"
+            wifiCostVal = 0;
+        }
+        let total = roomCostVal + wifiCostVal
+        TotalCost.text = "\(total)"
     }
 
 }
