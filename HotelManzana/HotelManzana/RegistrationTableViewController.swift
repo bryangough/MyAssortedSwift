@@ -12,7 +12,7 @@ import UIKit
 class RegistrationTableViewController: UITableViewController {
 
     var registrations: [Registration] = []
-    var delegate: EditExistingRoomDelegate?
+    //var delegate: AddRegistrationTableViewController?
     override func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
@@ -40,20 +40,30 @@ class RegistrationTableViewController: UITableViewController {
         
         guard let addRegistrationTableViewController = unwindSegue.source as? AddRegistrationTableViewController,
             let registration = addRegistrationTableViewController.registration else{ return }
-        
-        registrations.append(registration)
+        if registration.new
+        {
+            registrations.append(registration)
+        }
         tableView.reloadData()
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("table view \(indexPath.row)")
         delegate?.setRegistration(inReg:  registrations[indexPath.row])
-    }
+    }*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditRoom" {
             print("prepare EditRoom")
-            let destinationViewController = segue.destination as? EditExistingRoomDelegate
-            delegate = destinationViewController
+           // let destinationViewController = segue.destination as? AddRegistrationTableViewController
+            //delegate = destinationViewController
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = registrations[row]
+                
+                let navVC = segue.destination as? UINavigationController
+                let tableVC = navVC?.topViewController as! AddRegistrationTableViewController
+                tableVC.setRegistration(inReg:  item)
+            }
         }
     }
 

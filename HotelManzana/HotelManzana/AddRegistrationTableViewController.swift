@@ -20,6 +20,7 @@ struct Registration {
     
     var roomType: RoomType
     var wifi: Bool
+    var new: Bool = true
 }
 
 struct RoomType: Equatable {
@@ -47,7 +48,7 @@ protocol EditExistingRoomDelegate {
 
 class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeTableViewControllerDelegate, EditExistingRoomDelegate {
 
-    
+    var newReg:Bool = true
     
     
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -136,6 +137,7 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         checkInDatePicker.minimumDate = midnightToday
         checkInDatePicker.date = midnightToday
         
+        initRegistration()
         updateDateViews()
         updateNumberOfGuests()
         updateRoomType()
@@ -234,8 +236,10 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         let numberOfAdults = Int(numberofAdultsStepper.value)
         let numberOfChildren = Int(numberOfChildrenStepper.value)
         let hasWifi = wifiSwitch.isOn
-
-        return Registration(firstName: firstName,
+        
+        if newReg
+        {
+            return Registration(firstName: firstName,
                             lastName: lastName,
                             emailAddress: email,
                             checkInDate: checkInDate,
@@ -243,21 +247,45 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
             numberOfAdults: numberOfAdults,
             numberOfChildren: numberOfChildren,
             roomType: roomType,
-            wifi: hasWifi)
+            wifi: hasWifi,
+            new: newReg)
+        }
+        else
+        {
+            currentRegistration?.firstName = firstName
+            currentRegistration?.lastName = lastName
+            currentRegistration?.emailAddress = email
+            currentRegistration?.checkInDate = checkInDate
+            currentRegistration?.numberOfAdults = numberOfAdults
+            currentRegistration?.numberOfChildren = numberOfChildren
+            currentRegistration?.roomType = roomType
+            currentRegistration?.wifi = hasWifi
+            currentRegistration?.new = false
+            return currentRegistration
+        }
     }
+    var currentRegistration:Registration?
+    
     func setRegistration(inReg:Registration)
     {
-        print("set reg \(inReg)")
-        firstNameTextField.text = inReg.firstName
-        lastNameTextField.text = inReg.lastName
-        emailTextField.text = inReg.emailAddress
-        checkInDatePicker.date = inReg.checkInDate
-        checkOutDatePicker.date  = inReg.checkOutDate
-        numberofAdultsStepper.value = Double(inReg.numberOfAdults)
-        numberOfChildrenStepper.value = Double(inReg.numberOfChildren)
-        roomType = inReg.roomType
-        wifiSwitch.isOn = inReg.wifi
-        
+        currentRegistration = inReg
+    }
+    func initRegistration()
+    {
+        print("set reg")
+        if let inReg = currentRegistration
+        {
+            firstNameTextField.text = inReg.firstName
+            lastNameTextField.text = inReg.lastName
+            emailTextField.text = inReg.emailAddress
+            checkInDatePicker.date = inReg.checkInDate
+            checkOutDatePicker.date  = inReg.checkOutDate
+            numberofAdultsStepper.value = Double(inReg.numberOfAdults)
+            numberOfChildrenStepper.value = Double(inReg.numberOfChildren)
+            roomType = inReg.roomType
+            wifiSwitch.isOn = inReg.wifi
+            newReg = false
+        }
     }
     
     @IBAction func cancelButtonTapped() {
@@ -288,7 +316,7 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         {
             roomTypeShort.text = ""
         }
-        roomTypeCost.text = "\(roomCostVal)"
+        roomTypeCost.text = "$\(roomCostVal)"
         
         var wifiCostVal = 10 * numDays
         
@@ -304,15 +332,15 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         
         if(wifiSwitch.isOn)
         {
-            wifiCost.text = "\(wifiCostVal)"
+            wifiCost.text = "$\(wifiCostVal)"
         }
         else
         {
-            wifiCost.text = "0"
+            wifiCost.text = "$0"
             wifiCostVal = 0;
         }
         let total = roomCostVal + wifiCostVal
-        TotalCost.text = "\(total)"
+        TotalCost.text = "$\(total)"
     }
 
 }

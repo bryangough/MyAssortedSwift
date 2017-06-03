@@ -335,10 +335,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="d1n-1d-Abx">
+                            <tableViewSection headerTitle="Charges" id="d1n-1d-Abx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="RYI-Dh-6fo" detailTextLabel="tKL-Xs-26M" style="IBUITableViewCellStyleValue1" id="mBj-Hg-sKZ">
-                                        <rect key="frame" x="0.0" y="1043" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1063" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mBj-Hg-sKZ" id="cQR-zB-wyQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -362,7 +362,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="uPR-pt-bA4" detailTextLabel="RdD-EM-X0q" style="IBUITableViewCellStyleValue1" id="DoV-3v-f0K">
-                                        <rect key="frame" x="0.0" y="1087" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1107" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DoV-3v-f0K" id="3un-UR-Soh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -393,7 +393,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="JY0-Fd-PSi" detailTextLabel="KhK-Ko-erg" style="IBUITableViewCellStyleValue1" id="3K1-N5-qe8">
-                                        <rect key="frame" x="0.0" y="1131" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1151" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3K1-N5-qe8" id="8Em-ql-vlW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -424,7 +424,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="2or-Ms-VcL" detailTextLabel="iC8-iS-GXL" style="IBUITableViewCellStyleValue1" id="i0i-Oe-h2P">
-                                        <rect key="frame" x="0.0" y="1175" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1195" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i0i-Oe-h2P" id="AUX-ms-aRx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
